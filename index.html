@@ -1,266 +1,261 @@
 <!DOCTYPE html>
-                        <html lang="en">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                          <meta name="google-site-verification" content="ucm6IPtIyXWaLxkxpa_JrxNAiwgvmE_BnBkE1-JeOsU" />
-              <style>
-                body {
-                  background-color: white; /* Ensure the iframe has a white background */
-                }
-
-                /* Reset e variáveis */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --azul: #0A2E5C;
-  --cinza: #F4F6F9;
-  --laranja: #FF6B00;
-  --branco: #FFFFFF;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: var(--cinza);
-  color: #333;
-  line-height: 1.6;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-/* Header */
-.header {
-  background: var(--azul);
-  color: var(--branco);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
-
-.logo {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.menu a {
-  color: var(--branco);
-  text-decoration: none;
-  margin: 0 0.8rem;
-  font-weight: 600;
-  transition: opacity 0.2s;
-}
-
-.menu a:hover,
-.menu a:focus {
-  opacity: 0.8;
-  outline: 2px solid var(--laranja);
-}
-
-.btn-orcamento {
-  background: var(--laranja);
-  color: white;
-  padding: 0.5rem 1.2rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.btn-orcamento:hover,
-.btn-orcamento:focus {
-  background: #e05a00;
-  outline: 2px solid white;
-}
-
-/* Hero */
-.hero {
-  background: url('hero-bg.jpg') center/cover no-repeat;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--branco);
-  margin-top: 80px;
-}
-
-.hero-content h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero-content p {
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-}
-
-.btn-primary {
-  background: var(--laranja);
-  color: white;
-  padding: 1rem 2rem;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  display: inline-block;
-  transition: background 0.3s;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  background: #e05a00;
-  outline: 2px solid white;
-}
-
-/* Diferenciais */
-.diferenciais {
-  padding: 4rem 0;
-}
-
-.diferenciais .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-}
-
-.card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  margin: 1rem 0;
-}
-
-/* Footer */
-.footer {
-  background: var(--azul);
-  color: white;
-  padding: 3rem 0 1rem;
-}
-
-.footer .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-}
-
-.footer a {
-  color: #ddd;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0.3rem 0;
-  transition: color 0.2s;
-}
-
-.footer a:hover,
-.footer a:focus {
-  color: var(--laranja);
-  outline: 2px solid white;
-}
-
-.footer h4 {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-.copyright {
-  text-align: center;
-  padding-top: 2rem;
-  color: #aaa;
-  font-size: 0.9rem;
-}
-
-/* WhatsApp flutuante */
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  right: 24px;
-  background-color: #25D366;
-  color: white;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 28px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.whatsapp-float:hover,
-.whatsapp-float:focus {
-  transform: scale(1.1);
-  box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
-  outline: none;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .hero-content h1 { font-size: 2rem; }
-  .hero-content p { font-size: 1.1rem; }
-  .header .container {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-  }
-  .menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem;
-  }
-  .btn-orcamento {
-    padding: 0.5rem 1rem;
-    font-size: 0.95rem;
-  }
-}
-
-
-              </style>
-                        </head>
-                        <body>
-                            <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Verificação do Google Search Console -->
+  <meta name="google-site-verification" content="ucm6IPtIyXWaLxkxpa_JrxNAiwgvmE_BnBkE1-JeOsU" />
+  
   <title>K.S.M Construções e Serviços – Ética, Qualidade e Respeito</title>
-  <meta name="description" content="K.S.M Construções – Empresa de construção civil com ética, qualidade e respeito. Orçamento gratuito, equipe qualificada e obras entregues no prazo. Atendemos SP e região!">
+  <meta name="description" content="K.S.M Construções – Empresa de construção civil com ética, qualidade e respeito. Orçamento gratuito, equipe qualificada e obras entregues no prazo. Atendemos Alagoas e região!">
+  
+  <!-- Fontes -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Ícone -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Estilos embutidos -->
+  <style>
+    /* Reset e variáveis */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --azul: #0A2E5C;
+      --cinza: #F4F6F9;
+      --laranja: #FF6B00;
+      --branco: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--cinza);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    /* Header */
+    .header {
+      background: var(--azul);
+      color: var(--branco);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .menu a {
+      color: var(--branco);
+      text-decoration: none;
+      margin: 0 0.8rem;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .menu a:hover,
+    .menu a:focus {
+      opacity: 0.8;
+      outline: 2px solid var(--laranja);
+    }
+
+    .btn-orcamento {
+      background: var(--laranja);
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn-orcamento:hover,
+    .btn-orcamento:focus {
+      background: #e05a00;
+      outline: 2px solid white;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x1080?text=Constru%C3%A7%C3%A3o+KSM') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--branco);
+      margin-top: 80px;
+    }
+
+    .hero-content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-content p {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-primary {
+      background: var(--laranja);
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+      background: #e05a00;
+      outline: 2px solid white;
+    }
+
+    /* Diferenciais */
+    .diferenciais {
+      padding: 4rem 0;
+    }
+
+    .diferenciais .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin: 1rem 0;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--azul);
+      color: white;
+      padding: 3rem 0 1rem;
+    }
+
+    .footer .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer a {
+      color: #ddd;
+      text-decoration: none;
+      display: inline-block;
+      margin: 0.3rem 0;
+      transition: color 0.2s;
+    }
+
+    .footer a:hover,
+    .footer a:focus {
+      color: var(--laranja);
+      outline: 2px solid white;
+    }
+
+    .footer h4 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    /* WhatsApp flutuante */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 24px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 28px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .whatsapp-float:hover,
+    .whatsapp-float:focus {
+      transform: scale(1.1);
+      box-shadow: 2px 2px 15px rgba(0,0,0,0.4);
+      outline: none;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2rem; }
+      .hero-content p { font-size: 1.1rem; }
+      .header .container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+      }
+      .btn-orcamento {
+        padding: 0.5rem 1rem;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -274,9 +269,9 @@ body {
         <a href="#servicos">Serviços</a>
         <a href="#projetos">Projetos</a>
         <a href="#depoimentos">Depoimentos</a>
-        <a href="https://wa.me/5582993331746?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20*K.S.M%20Constru%C3%A7%C3%B5es*%0A%0A%E2%9C%85%20Nome%3A%0A%E2%9C%85%20Tipo%20de%20servi%C3%A7o%20(Constru%C3%A7%C3%A3o%2C%20Reforma%2C%20Manuten%C3%A7%C3%A3o)%3A%0A%E2%9C%85%20Cidade%2FRegi%C3%A3o%3A%0A%E2%9C%85%20Prazo%20desejado%3A" target="_blank" rel="noopener noreferrer">Contato</a>
+        <a href="https://wa.me/5582993331746?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20K.S.M%20Constru%C3%A7%C3%B5es%0A%0A%E2%9C%85%20Nome%3A%0A%E2%9C%85%20Tipo%20de%20servi%C3%A7o%20(Constru%C3%A7%C3%A3o%2C%20Reforma%2C%20Manuten%C3%A7%C3%A3o)%3A%0A%E2%9C%85%20Cidade%2FRegi%C3%A3o%3A%0A%E2%9C%85%20Prazo%20desejado%3A" target="_blank" rel="noopener noreferrer">Contato</a>
       </nav>
-      <a href="https://wa.me/5582993331746?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20*K.S.M%20Constru%C3%A7%C3%B5es*%0A%0A%E2%9C%85%20Nome%3A%0A%E2%9C%85%20Tipo%20de%20servi%C3%A7o%20(Constru%C3%A7%C3%A3o%2C%20Reforma%2C%20Manuten%C3%A7%C3%A3o)%3A%0A%E2%9C%85%20Cidade%2FRegi%C3%A3o%3A%0A%E2%9C%85%20Prazo%20desejado%3A" 
+      <a href="https://wa.me/5582993331746?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20K.S.M%20Constru%C3%A7%C3%B5es%0A%0A%E2%9C%85%20Nome%3A%0A%E2%9C%85%20Tipo%20de%20servi%C3%A7o%20(Constru%C3%A7%C3%A3o%2C%20Reforma%2C%20Manuten%C3%A7%C3%A3o)%3A%0A%E2%9C%85%20Cidade%2FRegi%C3%A3o%3A%0A%E2%9C%85%20Prazo%20desejado%3A" 
          target="_blank" rel="noopener noreferrer" class="btn-orcamento">Orçamento Rápido</a>
     </div>
   </header>
@@ -284,89 +279,4 @@ body {
   <!-- Hero -->
   <section id="inicio" class="hero">
     <div class="container hero-content">
-      <h1>Construímos com ética, qualidade e respeito</h1>
-      <p>Soluções completas em construção civil e serviços técnicos</p>
-     <a href="https://wa.me/5582993331746?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20*K.S.M%20Constru%C3%A7%C3%B5es*%0A%0A%E2%9C%85%20Nome%3A%0A%E2%9C%85%20Tipo%20de%20servi%C3%A7o%20(Constru%C3%A7%C3%A3o%2C%20Reforma%2C%20Manuten%C3%A7%C3%A3o)%3A%0A%E2%9C%85%20Cidade%2FRegi%C3%A3o%3A%0A%E2%9C%85%20Prazo%20desejado%3A" target="_blank" rel="noopener noreferrer" class="btn-primary">Peça seu orçamento gratuito</a>
-    </div>
-  </section>
-
-  <!-- Diferenciais -->
-  <section class="diferenciais">
-    <div class="container">
-      <div class="card">
-        <div aria-hidden="true">✅</div>
-        <h3>Transparência Total</h3>
-        <p>Orçamento detalhado, sem surpresas.</p>
-      </div>
-      <div class="card">
-        <div aria-hidden="true">🌱</div>
-        <h3>Sustentabilidade</h3>
-        <p>Redução de resíduos e materiais responsáveis.</p>
-      </div>
-      <div class="card">
-        <div aria-hidden="true">👷</div>
-        <h3>Equipe Qualificada</h3>
-        <p>Profissionais treinados e certificados.</p>
-      </div>
-      <div class="card">
-        <div aria-hidden="true">⏱</div>
-        <h3>Prazo Garantido</h3>
-        <p>Entregamos no tempo combinado.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer" aria-label="Rodapé do site">
-    <div class="container">
-      <div>
-        <div class="logo" aria-label="Logo da K.S.M Construções">K.S.M</div>
-        <p>Construindo com ética, qualidade e respeito</p>
-      </div>
-      <div>
-        <h4>Links Rápidos</h4>
-        <a href="#sobre">Sobre</a><br>
-        <a href="#servicos">Serviços</a><br>
-        <a href="politica-privacidade.html">Política de Privacidade</a>
-      </div>
-      <div>
-        <h4>Contato</h4>
-        <p>📞 <a href="tel:+5582993331746" style="color:inherit; text-decoration:none;">(82) 99333-1746</a></p>
-        <p>✉ <a href="mailto:kauemorais562@gmail.com" style="color:inherit; text-decoration:none;">kauemorais562@gmail.com</a></p>
-        <p>📍 Maceió, Alagoas</p>
-      </div>
-      <div>
-        <h4>Redes Sociais</h4>
-        <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a><br>
-        <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-    </div>
-    <div class="copyright">© 2025 K.S.M Construções e Serviços. Todos os direitos reservados.</div>
-  </footer>
-
-  <!-- WhatsApp flutuante -->
-  <a href="https://wa.me/5582993331746?text=Ol%C3%A1%21%20Gostaria%20de%20um%20or%C3%A7amento%20para%20*K.S.M%20Constru%C3%A7%C3%B5es*%0A%0A%E2%9C%85%20Nome%3A%0A%E2%9C%85%20Tipo%20de%20servi%C3%A7o%20(Constru%C3%A7%C3%A3o%2C%20Reforma%2C%20Manuten%C3%A7%C3%A3o)%3A%0A%E2%9C%85%20Cidade%2FRegi%C3%A3o%3A%0A%E2%9C%85%20Prazo%20desejado%3A" 
-     class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">💬</a>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-
- 
-<script>
-  // Animação suave apenas para âncoras internas (#)
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
-</script>
+      <
